@@ -3,12 +3,14 @@
 
 #include "Character/AuraCharacterBase.h"
 
+const FName AAuraCharacterBase::WeaponSocketName = FName("WeaponHandSocket");
+
 AAuraCharacterBase::AAuraCharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(FName("Weapon"));
-	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
+	Weapon->SetupAttachment(GetMesh(), WeaponSocketName);
 	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 

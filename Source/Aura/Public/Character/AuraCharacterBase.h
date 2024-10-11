@@ -12,6 +12,9 @@ class AURA_API AAuraCharacterBase : public ACharacter
 	GENERATED_BODY()
 
 public:
+	static const FName WeaponSocketName;
+
+public:
 	AAuraCharacterBase();
 
 protected:
