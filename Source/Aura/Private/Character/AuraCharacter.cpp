@@ -4,6 +4,7 @@
 #include "Character/AuraCharacter.h"
 
 #include "AbilitySystemComponent.h"
+#include "AbilitySystem/AuraAttributeSet.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -58,6 +59,12 @@ void AAuraCharacter::InitAbilityActorInfo()
 	AbilitySystemComponent->InitAbilityActorInfo(AuraPlayerState, this);
 	
 	AttributeSet = AuraPlayerState->GetAttributeSet();
+
+	if (auto AuraAttributeSet = Cast<UAuraAttributeSet>(AttributeSet))
+	{
+		AuraAttributeSet->InitDefaultAuraAttributes(DefaultHealth, DefaultMaxHealth,
+			DefaultMana, DefaultMaxMana);
+	}
 
 	if (auto const AuraPlayerController = Cast<AAuraPlayerController>(GetController()))
 	{

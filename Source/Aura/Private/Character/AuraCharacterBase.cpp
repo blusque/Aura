@@ -3,6 +3,8 @@
 
 #include "Character/AuraCharacterBase.h"
 
+#include "AttributeSet.h"
+
 const FName AAuraCharacterBase::WeaponSocketName = FName("WeaponHandSocket");
 
 AAuraCharacterBase::AAuraCharacterBase()

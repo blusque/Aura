@@ -68,6 +68,9 @@ public:
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, MaxMana);
 
 	UFUNCTION()
+	void InitDefaultAuraAttributes(float InHealth, float InMaxHealth, float InMana, float InMaxMana);
+
+	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
 
 	UFUNCTION()

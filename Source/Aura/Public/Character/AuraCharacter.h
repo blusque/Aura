@@ -29,5 +29,17 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category="Camera")
 	TObjectPtr<UCameraComponent> FollowCamera;
 
+	UPROPERTY(EditAnywhere, Category="Attribute")
+	float DefaultHealth = 50.f;
+
+	UPROPERTY(EditAnywhere, Category="Attribute")
+	float DefaultMaxHealth = 100.f;
+
+	UPROPERTY(EditAnywhere, Category="Attribute")
+	float DefaultMana = 50.f;
+
+	UPROPERTY(EditAnywhere, Category="Attribute")
+	float DefaultMaxMana = 100.f;
+
 	void InitAbilityActorInfo();
 };
